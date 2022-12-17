@@ -32,7 +32,7 @@ public class SimpleCalcGUI extends JFrame{
             } catch (ArithmeticException ar) {
                 JOptionPane.showMessageDialog(SimpleCalcGUI.this, "Arithmetic overflow or division by zero has occurred.", "Error", JOptionPane.ERROR_MESSAGE);
             } catch (NumberFormatException er) {
-                JOptionPane.showMessageDialog(null, "Inputs are invalid", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Invalid or Empty Inputs", "Error", JOptionPane.ERROR_MESSAGE);
             }
 
         });
@@ -41,7 +41,7 @@ public class SimpleCalcGUI extends JFrame{
     public static void main(String[] args) {
         SimpleCalcGUI calc = new SimpleCalcGUI();
         calc.setContentPane(calc.panel1);
-        calc.setSize(400, 250);
+        calc.setSize(450, 250);
         calc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         calc.setVisible(true);
 
