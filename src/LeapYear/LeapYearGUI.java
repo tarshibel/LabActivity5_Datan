@@ -11,7 +11,8 @@ public class LeapYearGUI extends JFrame{
         LeapYearGUI leap = new LeapYearGUI();
         leap.setContentPane(new LeapYearGUI().panel1);
         leap.setSize(200, 200);
-        leap.setVisible(true);
         leap.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        leap.setVisible(true);
+
     }
 }

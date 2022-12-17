@@ -1,5 +1,7 @@
 package SimpleCalc;
 
+import LeapYear.LeapYearGUI;
+
 import javax.swing.*;
 
 public class SimpleCalcGUI extends JFrame{
@@ -9,5 +11,14 @@ public class SimpleCalcGUI extends JFrame{
     private JComboBox cbOperations;
     private JButton btnCompute;
     private JLabel lblResult;
+
+    public static void main(String[] args) {
+        SimpleCalcGUI calc = new SimpleCalcGUI();
+        calc.setContentPane(new SimpleCalcGUI().panel1);
+        calc.setSize(400, 200);
+        calc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        calc.setVisible(true);
+
+    }
 
 }

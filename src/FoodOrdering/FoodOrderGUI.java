@@ -1,5 +1,7 @@
 package FoodOrdering;
 
+import LeapYear.LeapYearGUI;
+
 import javax.swing.*;
 
 public class FoodOrderGUI extends JFrame{
@@ -15,4 +17,13 @@ public class FoodOrderGUI extends JFrame{
     private JRadioButton rb10;
     private JRadioButton rb15;
     private JButton btnOrder;
+
+    public static void main(String[] args) {
+        FoodOrderGUI order = new FoodOrderGUI();
+        order.setContentPane(new LeapYearGUI().panel1);
+        order.setSize(350, 600);
+        order.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        order.setVisible(true);
+
+    }
 }
