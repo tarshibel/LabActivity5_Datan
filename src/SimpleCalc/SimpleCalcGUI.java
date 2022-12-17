@@ -30,7 +30,7 @@ public class SimpleCalcGUI extends JFrame{
 
                 lblResult.setText(Double.toString(res));
             } catch (ArithmeticException ar) {
-                JOptionPane.showMessageDialog(SimpleCalcGUI.this, "Arithmetic overflow or division by zero has occured.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(SimpleCalcGUI.this, "Arithmetic overflow or division by zero has occurred.", "Error", JOptionPane.ERROR_MESSAGE);
             } catch (NumberFormatException er) {
                 JOptionPane.showMessageDialog(null, "Inputs are invalid", "Error", JOptionPane.ERROR_MESSAGE);
             }
