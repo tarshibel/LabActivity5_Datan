@@ -14,21 +14,26 @@ public class SimpleCalcGUI extends JFrame{
     public SimpleCalcGUI(){
         setTitle("Simple Calculator");
         btnCompute.addActionListener( actionEvent -> {
+            try{
+                double num1 = Double.parseDouble(tfNumber1.getText());
+                double num2 = Double.parseDouble(tfNumber2.getText());
+                double res = 0;
 
-                    double num1 = Double.parseDouble(tfNumber1.getText());
-                    double num2 = Double.parseDouble(tfNumber2.getText());
-                    double res = 0;
+                String op = (String) cbOperations.getSelectedItem();
 
-                    String op = (String) cbOperations.getSelectedItem();
+                switch(Objects.requireNonNull(op)) {
+                    case "+" -> res = num1 + num2;
+                    case "-" -> res = num1 - num2;
+                    case "*" -> res = num1 * num2;
+                    case "/" -> res = num1 / num2;
+                }
 
-                    switch(Objects.requireNonNull(op)) {
-                        case "+" -> res = num1 + num2;
-                        case "-" -> res = num1 - num2;
-                        case "*" -> res = num1 * num2;
-                        case "/" -> res = num1 / num2;
-                    }
-
-                    lblResult.setText(Double.toString(res));
+                lblResult.setText(Double.toString(res));
+            } catch (ArithmeticException ar) {
+                JOptionPane.showMessageDialog(SimpleCalcGUI.this, "Arithmetic overflow or division by zero has occured.", "Error", JOptionPane.ERROR_MESSAGE);
+            } catch (NumberFormatException er) {
+                JOptionPane.showMessageDialog(null, "Inputs are invalid", "Error", JOptionPane.ERROR_MESSAGE);
+            }
 
         });
     }
