@@ -20,7 +20,7 @@ public class FoodOrderGUI extends JFrame{
 
     public static void main(String[] args) {
         FoodOrderGUI order = new FoodOrderGUI();
-        order.setContentPane(new LeapYearGUI().panel1);
+        order.setContentPane(new FoodOrderGUI().panel1);
         order.setSize(350, 600);
         order.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         order.setVisible(true);
