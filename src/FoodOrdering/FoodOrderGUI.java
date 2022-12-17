@@ -1,7 +1,5 @@
 package FoodOrdering;
 
-import LeapYear.LeapYearGUI;
-
 import javax.swing.*;
 
 public class FoodOrderGUI extends JFrame{
@@ -18,9 +16,43 @@ public class FoodOrderGUI extends JFrame{
     private JRadioButton rb15;
     private JButton btnOrder;
 
+    public FoodOrderGUI() {
+        setTitle("Food Ordering System");
+        btnOrder.addActionListener(actionEvent -> {
+            double total = 0;
+
+            if (cPizza.isSelected())
+                total += 100;
+            if (cBurger.isSelected())
+                total += 80;
+            if (cFries.isSelected())
+                total += 60;
+            if (cSoftDrinks.isSelected())
+                total += 55;
+            if (cTea.isSelected())
+                total += 50;
+            if (cSundae.isSelected())
+                total += 40;
+
+            //with discounts
+
+            if (rbNone.isSelected())
+                total = total + 0;
+            else if (rb5.isSelected())
+                total -= total * 0.05;
+            else if (rb10.isSelected())
+                total -= total * 0.1;
+            else if (rb15.isSelected())
+                total -= total * 0.15;
+
+            JOptionPane.showMessageDialog(panel1,"The total price is Php " + String.format("%.2f", total));
+
+        });
+    }
+
     public static void main(String[] args) {
         FoodOrderGUI order = new FoodOrderGUI();
-        order.setContentPane(new FoodOrderGUI().panel1);
+        order.setContentPane(order.panel1);
         order.setSize(350, 600);
         order.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         order.setVisible(true);
