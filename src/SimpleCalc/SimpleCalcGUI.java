@@ -2,7 +2,7 @@ package SimpleCalc;
 
 import javax.swing.*;
 
-public class SimpleCalcGUI {
+public class SimpleCalcGUI extends JFrame{
     private JPanel panel1;
     private JTextField tfNumber1;
     private JTextField tfNumber2;
